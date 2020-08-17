@@ -378,7 +378,7 @@ async def replied_user(draw, tot, text, maxlength, title):
 async def _(event):
     if event.fwd_from:
         return
-    reply = await event.get_reply_message(Wait Bruh)
+    reply = await event.get_reply_message("Wait Bruh")
     msg = reply.message
     repliedreply = await reply.get_reply_message()
     user = (
