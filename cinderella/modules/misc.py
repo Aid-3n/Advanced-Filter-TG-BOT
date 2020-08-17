@@ -338,12 +338,13 @@ def scam(imgspage, lim):
 
 
 __help__ = """
- - /id: get the current group id. If used by replying to a message, gets that user's id.
- - /info: get information about a user.
- - /gifid: Get gif ID.
+ - /id: Get the current group id. If used by replying to a message, gets that user's id.
+ - /info: Get information about a user.
+ - /gifid: Get GiF ID.
  - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
- - /ping :get ping time of bot to telegram server
+ - /ping : Get My Ping Time
  - /uptime: Find last service update time
+ - /reverse: Use To Find Same Picture From Google 
 """
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
