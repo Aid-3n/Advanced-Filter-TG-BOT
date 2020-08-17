@@ -49,11 +49,11 @@
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
-         "value": "1118936839"
+         "value": "636052499"
       },
       "OWNER_NAME": {
          "description": "Your Name",
-         "value": "✰Sᴀͥʀᴀͣᴛͫʜ™️✰"
+         "value": "AIDEN"
       },
       "DEV_USERS": {
          "description": "ID of users who are Dev (can use /py etc.)",
@@ -75,7 +75,7 @@
       },
        "START_IMG": {
          "description": "Image shows when hit /start",
-         "value": "https://telegra.ph/file/511ad504656e712b88235.jpg"    
+         "value": "https://www.whykol.com/wp-content/uploads/2013/10/parakkum-thalika-harisree-ashokan.jpg"    
       },
       "API_OPENWEATHER": {
          "description": "Required for weather information",
@@ -142,11 +142,11 @@
       "weeb",
       "group",
       "manager",
-      "cinderella"
+      "Filter"
       
    ],
-   "name": "Cinderella",
-   "repository": "https://github.com/Sur-vivor/CiderellaProBot",
-   "success_url": "https://telegram.dog/CinderellaProBot",
-   "logo": "https://telegra.ph/file/511ad504656e712b88235.jpg"
+   "name": "Filter BOT",
+   "repository": "https://github.com/Jason-Brody/mwon",
+   "success_url": "https://telegram.dog/AID_3N",
+   "logo": "https://pbs.twimg.com/profile_images/689189555765784576/3wgIDj3j_400x400.png"
 }
