@@ -97,7 +97,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     elif user.id == bot.id:     
         text += "\n💃Lol🧞‍♂️It's Me😉"
 
-   try:
+    try:
         profile = bot.get_user_profile_photos(user.id).photos[0][-1]
         bot.sendChatAction(chat.id, "upload_photo")
         bot.send_photo(chat.id, photo=profile, caption=(text), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
