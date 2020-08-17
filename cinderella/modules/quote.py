@@ -380,7 +380,7 @@ async def _(event):
         return
     reply = await event.get_reply_message("Wait Bruh")
     msg = reply.message
-    repliedreply = await reply.get_reply_message()
+    repliedreply = await reply.get_reply_message("Wait Bruh")
     user = (
         await event.client.get_entity(reply.forward.sender) if reply.fwd_from
         else reply.sender)
