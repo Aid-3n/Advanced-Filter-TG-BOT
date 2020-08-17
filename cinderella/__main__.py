@@ -18,7 +18,7 @@ from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, Cha
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown
-from cinderella import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, OWNER_NAME, ALLOW_EXCL
+from cinderella import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, OWNER_NAME, ALLOW_EXCL, telethn
 from cinderella.modules import ALL_MODULES
 from cinderella.modules.helper_funcs.chat_status import is_user_admin
 from cinderella.modules.helper_funcs.misc import paginate_modules
@@ -58,8 +58,8 @@ def vercheck() -> str:
 
 
 SOURCE_STRING = """
-⚡I'm built in python3, using the python-telegram-bot library, and am fully opensource - you can find what makes me tick [here](https://github.com/Sur-vivor/CinderellaProBot)
-⚡You Can Clone Me [Here](https://heroku.com/deploy?template=https://github.com/Sur-vivor/CinderellaProBot.git)
+⚡I'm built in python3, using the python-telegram-bot library, and am fully opensource
+⚡You Can Clone Me [Here](https://github.com/PaulSonOfLars/tgbot)
 """
 
 
@@ -179,7 +179,7 @@ def send_start(bot, update):
     first_name = update.effective_user.first_name 
     text = PM_START_TEXT
 
-    keyboard = [[InlineKeyboardButton(text="🤝Help",callback_data="help_back"),InlineKeyboardButton(text="🛡Creator🛡",url="https://t.me/Surv_ivor")]]
+    keyboard = [[InlineKeyboardButton(text="🤝Help",callback_data="help_back"),InlineKeyboardButton(text="🛡Creator🛡",url="https://t.me/AID_3N")]]
     keyboard += [[InlineKeyboardButton(text="🌐Connect Group", callback_data="main_connect"),InlineKeyboardButton(text="⚜️Add Me⚜️",url="t.me/{}?startgroup=true".format(bot.username))]]
 
     update.effective_message.reply_photo(img, PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_ID), 
@@ -281,7 +281,7 @@ def get_help(bot: Bot, update: Update):
         update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
                                             reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="⚜️Help",url="t.me/{}?start=help".format(bot.username))],  
-                                                [InlineKeyboardButton(text="🛡Contact Creator",url="https://t.me/Surv_ivor")]]))
+                                                [InlineKeyboardButton(text="🛡Contact Creator",url="https://t.me/AID_3N")]]))
         return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
@@ -601,7 +601,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Cinderella running...")
+        LOGGER.info("GOIN GOD-MODE....")
         updater.start_polling(timeout=15, read_latency=4)
 
     updater.idle()
