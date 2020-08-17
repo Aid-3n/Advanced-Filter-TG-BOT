@@ -5,7 +5,7 @@ import datetime
 from typing import Optional, List
 import resource
 import platform
-import sys
+from sys import argv
 import traceback
 import requests
 from parsel import Selector
