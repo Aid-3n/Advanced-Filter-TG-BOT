@@ -37,3 +37,4 @@ pytz
 parsel
 hurry.filesize
 spamwatch
+telethon
