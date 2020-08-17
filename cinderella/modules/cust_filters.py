@@ -133,7 +133,7 @@ def filters(bot: Bot, update: Update):
         is_video = True
 
     else:
-        msg.reply_text("You didn't specify what to reply with!")
+        msg.reply_text("Please Provide Anything Reply To!")
         return
 
     # Add the filter
@@ -142,6 +142,10 @@ def filters(bot: Bot, update: Update):
         if handler.filters == (keyword, chat.id):
             dispatcher.remove_handler(handler, HANDLER_GROUP)
 
+     all_handlers = sql.get_chat_triggers(chat.id)
+    if len(all_handlers)>300:
+        msg.reply_text("*You've Reached Maximum Filter Capacity(300)*")
+        return
     sql.add_filter(chat_id, keyword, content, is_sticker, is_document, is_image, is_audio, is_voice, is_video,
                    buttons)
 
@@ -179,10 +183,10 @@ def stop_filter(bot: Bot, update: Update):
     for keyword in chat_filters:
         if keyword == args[1]:
             sql.remove_filter(chat_id, args[1])
-            update.effective_message.reply_text("Yep, I'll stop replying to that in *{}*.".format(chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
+            update.effective_message.reply_text("Okay,Got It I Won't Reply It In *{}*.".format(chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
             raise DispatcherHandlerStop
 
-    update.effective_message.reply_text("That's not a current filter - run /filters for all active filters.")
+    update.effective_message.reply_text("LoL,Uoh Joking? This Ain't A Filter,Click This Blue Colour /Filters")
 
 
 @run_async
@@ -234,14 +238,14 @@ def reply_filter(bot: Bot, update: Update):
                     if excp.message == "Unsupported url protocol":
                         message.reply_text("You seem to be trying to use an unsupported url protocol. Telegram "
                                            "doesn't support buttons for some protocols, such as tg://. Please try "
-                                           "again, or ask in @Sur_vivor for help.")
+                                           "again, or ask in @DX_SUPPORT for help.")
                     elif excp.message == "Reply message not found":
                         bot.send_message(chat.id, filt.reply, parse_mode=ParseMode.MARKDOWN,
                                          disable_web_page_preview=True,
                                          reply_markup=keyboard)
                     else:
                         message.reply_text("This note could not be sent, as it is incorrectly formatted. Ask in "
-                                           "@Sur_vivor if you can't figure out why!")
+                                           "@DX_SUPPORT if you can't figure out why!")
                         LOGGER.warning("Message %s could not be parsed", str(filt.reply))
                         LOGGER.exception("Could not parse filter %s in chat %s", str(filt.keyword), str(chat.id))
 
@@ -269,7 +273,7 @@ def stop_all_filters(bot: Bot, update: Update):
     flist = sql.get_chat_triggers(chat.id)
 
     if not flist:
-        message.reply_text("There aren't any active filters in {}!".format(chat.title))
+        message.reply_text("No Filters In {}!".format(chat.title))
         return
 
     f_flist = []
@@ -306,6 +310,7 @@ keywords are in lowercase. If you want your keyword to be a sentence, use quotes
 doin?
  - /stop <filter keyword>: stop that filter.
  - /stopall: stop all filters
+ - /markdownhelp -  More Cool Features
 """
 
 __mod_name__ = "FILTERS"
