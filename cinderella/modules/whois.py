@@ -16,12 +16,11 @@ from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html
 from cinderella.modules.helper_funcs.chat_status import user_admin, sudo_plus, is_user_admin
 from cinderella import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, DEV_USERS, WHITELIST_USERS
-from cinderella.__main__ import STATS, USER_INFO, TOKEN
+from cinderella.__main__ import STATS, TOKEN
 from cinderella.modules.disable import DisableAbleCommandHandler, DisableAbleRegexHandler
 from cinderella.modules.helper_funcs.extraction import extract_user
 from cinderella.modules.helper_funcs.filters import CustomFilters
 import cinderella.modules.sql.users_sql as sql
-import cinderella.modules.helper_funcs.cas_api as cas
 
 @run_async
 def info(bot: Bot, update: Update, args: List[str]):
@@ -57,7 +56,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     text += f"\n☣️Permanent user link: {mention_html(user.id, 'link🚪')}"
 
     num_chats = sql.get_user_num_chats(user.id)
-    text += f"\n🌐Chat count: <code>{num_chats}</code>"
+    text += f"\n🌐Chat counts: <code>{num_chats}</code>"
     text += "\n🎭Number of profile pics: {}".format(bot.get_user_profile_photos(user.id).total_count)
    
     try:
@@ -98,22 +97,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     elif user.id == bot.id:     
         text += "\n💃Lol🧞‍♂️It's Me😉"
 
-
-    text +="\n"
-    text += "\nCAS banned: "
-    result = cas.banchecker(user.id)
-    text += str(result)
-    for mod in USER_INFO:
-        if mod.__mod_name__ == "Users":
-            continue
-
-        try:
-            mod_info = mod.__user_info__(user.id)
-        except TypeError:
-            mod_info = mod.__user_info__(user.id, chat.id)
-        if mod_info:
-            text += "\n" + mod_info
-    try:
+   try:
         profile = bot.get_user_profile_photos(user.id).photos[0][-1]
         bot.sendChatAction(chat.id, "upload_photo")
         bot.send_photo(chat.id, photo=profile, caption=(text), parse_mode=ParseMode.HTML, disable_web_page_preview=True)
