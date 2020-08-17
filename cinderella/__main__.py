@@ -602,12 +602,17 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("GOIN GOD-MODE....")
+        LOGGER.info("Goin GOD-MODE")
         updater.start_polling(timeout=15, read_latency=4)
+    if len(argv) not in (1, 3, 4):
+        telethn.disconnect()
+    else:
+        telethn.run_until_disconnected()
 
     updater.idle()
 
-    
+
 if __name__ == '__main__':
-    LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
+    LOGGER.info("Successfully loaded modules: %s", str(ALL_MODULES))
+    telethn.start(bot_token=TOKEN)
     main()
