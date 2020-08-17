@@ -28,9 +28,9 @@ psutil
 bleach
 aiohttp>=2.2.5
 Pillow>=4.2.0
-CurrencyConverter
 #translator
 googletrans
+fontTools
 jikanpy
 speedtest-cli
 pytz
