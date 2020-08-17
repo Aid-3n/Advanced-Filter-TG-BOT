@@ -1,18 +1,29 @@
 import html
 import re
-from typing import List
+from typing import List, Optional
+import json
+import random
+import time
+import pyowm
+from datetime import datetime
 
 import requests
 from telegram import Bot, Update, MessageEntity, ParseMode
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import mention_html
+from telegram import Message
+from telegram import Update, Bot
+from telegram.ext import run_async
 
 from cinderella import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, DEV_USERS, WHITELIST_USERS
 from cinderella.__main__ import STATS, USER_INFO, TOKEN
 from cinderella.modules.disable import DisableAbleCommandHandler
 from cinderella.modules.helper_funcs.chat_status import user_admin, sudo_plus
 from cinderella.modules.helper_funcs.extraction import extract_user
+from cinderella import dispatcher, StartTime
+
+from requests import get
 
 MARKDOWN_HELP = f"""
 Markdown is a very powerful formatting tool supported by telegram. {dispatcher.bot.first_name} has some enhancements, to make sure that \
@@ -114,6 +125,48 @@ def stats(bot: Bot, update: Update):
     stats = "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r'(\d+)', r'<code>\1</code>', stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
+    
+def get_readable_time(seconds: int) -> str:
+
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+
+    for x in range(len(time_list)):
+        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+        
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+
+    return ping_time
+@run_async
+def ping(bot: Bot, update: Update):
+    start_time = time.time()
+    requests.get('https://api.telegram.org')
+    end_time = time.time()
+    ping_time = str(round((end_time - start_time), 2) % 60)
+    uptime = get_readable_time((time.time() - StartTime))
+    update.effective_message.reply_text(f"🏓 Pong!\n⏱️<b>Reply took:</b> {ping_time}s\n🔮<b>Service Uptime:</b> {uptime}", parse_mode=ParseMode.HTML)
+
+@run_async
+def uptime(bot: Bot, update: Update):
+	uptime = get_readable_time((time.time() - StartTime))
+	update.effective_message.reply_text(f"🔮Service Uptime: {uptime}")
 
 
 __help__ = """
@@ -121,8 +174,8 @@ __help__ = """
  - /info: get information about a user.
  - /gifid: Get gif ID.
  - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
- - /imdb <movie or TV series name>: View IMDb results for selected movie or TV series
- - /direct <link>: Download from a link
+ - /ping :get ping time of bot to telegram server
+ - /uptime: Find last service update time
 """
 
 ID_HANDLER = DisableAbleCommandHandler("id", get_id, pass_args=True)
@@ -130,6 +183,10 @@ GIFID_HANDLER = DisableAbleCommandHandler("gifid", gifid)
 ECHO_HANDLER = DisableAbleCommandHandler("echo", echo, filters=Filters.group)
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
 STATS_HANDLER = CommandHandler("stats", stats)
+PING_HANDLER = DisableAbleCommandHandler("ping", ping)
+UPTIME_HANDLER = DisableAbleCommandHandler("uptime", uptime)
+dispatcher.add_handler(UPTIME_HANDLER)
+dispatcher.add_handler(PING_HANDLER)
 
 dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(GIFID_HANDLER)
@@ -137,6 +194,6 @@ dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 dispatcher.add_handler(STATS_HANDLER)
 
-__mod_name__ = "MISC"
+__mod_name__ = "Main Module😜"
 __command_list__ = ["id", "echo"]
 __handlers__ = [ID_HANDLER, ECHO_HANDLER, MD_HELP_HANDLER, STATS_HANDLER]
