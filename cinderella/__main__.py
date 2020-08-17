@@ -29,7 +29,7 @@ from cinderella.modules.connection import connect_button
 
 PM_START_TEXT = """
 _Hello_ *{}*
-_My name is_ *{}*\n_A Powerful Telegram ProBot to Manage Your Groups,feel free to add to your groups!!_
+_My name is_ *{}*\n_A Powerful Telegram FilterBOT to Manage Your Groups,feel free to add to your groups!!_
 _Maintained by_ [{}](tg://user?id={})
 """
 
@@ -60,7 +60,7 @@ def vercheck() -> str:
 
 SOURCE_STRING = """
 ⚡I'm built in python3, using the python-telegram-bot library, and am fully opensource
-⚡You Can Clone Me [Here](https://github.com/PaulSonOfLars/tgbot)
+⚡You Can Find My Source [Here](https://github.com/PaulSonOfLars/tgbot)
 """
 
 
@@ -79,7 +79,7 @@ GDPR = []
 
 START_IMG = os.environ.get('START_IMG', None)
 if START_IMG is None:
-    img = "https://telegra.ph/file/511ad504656e712b88235.jpg"
+    img = "https://www.betabreakers.com/wp-content/uploads/2016/05/38699913_S.jpg"
 else:
   img = START_IMG    
     
