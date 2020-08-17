@@ -25,6 +25,8 @@ coffeehouse
 typing
 gtts
 wikipedia
+pytz
+parsel
 pyowm
 animu-cf
 uptime
