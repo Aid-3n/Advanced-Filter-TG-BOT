@@ -142,10 +142,11 @@ def filters(bot: Bot, update: Update):
         if handler.filters == (keyword, chat.id):
             dispatcher.remove_handler(handler, HANDLER_GROUP)
 
-     all_handlers = sql.get_chat_triggers(chat.id)
+    all_handlers = sql.get_chat_triggers(chat.id)
     if len(all_handlers)>300:
         msg.reply_text("*You've Reached Maximum Filter Capacity(300)*")
         return
+    
     sql.add_filter(chat_id, keyword, content, is_sticker, is_document, is_image, is_audio, is_voice, is_video,
                    buttons)
 
