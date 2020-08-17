@@ -107,7 +107,7 @@ def steal(bot: Bot, update: Update, args: List[str]):
             msg.reply_text(f"Sticker successfully added to [pack](t.me/addstickers/{packname})" +
                             f"\nEmoji is: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN)
         except OSError as e:
-            msg.reply_text("I can only steal images, dude.")
+            msg.reply_text("I can only steal images/Stickers No Animation")
             print(e)
             return
         except TelegramError as e:
@@ -232,9 +232,10 @@ __help__ = """
 - /stickerid: reply to a sticker to get its ID.
 - /getsticker: reply to a sticker to get the raw PNG image.
 - /steal: reply to a sticker or image to add it to your pack.
+- /q: Reply To Messages
 """
 
-__mod_name__ = "STICKERS"
+__mod_name__ = "STICKERS😉"
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker)
 STEAL_HANDLER = DisableAbleCommandHandler("steal", steal, pass_args=True, admin_ok=False)
