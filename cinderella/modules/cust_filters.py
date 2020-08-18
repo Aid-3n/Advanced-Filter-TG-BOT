@@ -143,7 +143,7 @@ def filters(bot: Bot, update: Update):
             dispatcher.remove_handler(handler, HANDLER_GROUP)
 
     all_handlers = sql.get_chat_triggers(chat.id)
-    if len(all_handlers)>Config.FTR_LIM:
+    if len(all_handlers)> Config.FTR_LIM:
         msg.reply_text("**You've Reached Maximum Filter Capacity For This Group**")
         return
     
