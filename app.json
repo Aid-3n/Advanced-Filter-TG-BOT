@@ -11,18 +11,39 @@
    "env": {
       "ALLOW_EXCL": {
          "description": "Set this to True if you want ! to be a command prefix along with /",
-         "value": "True 
+         "value": "True"
+      },
+      "BAN_STICKER": {
+         "description": "ID of the sticker you want to use when banning people.",
+         "required": false,
+         "value": ""
+      },
+      "MESSAGE_DUMP": {
+         "description": "optional: a chat where your replied saved messages are stored, to stop people deleting their old",
+         "required": false,
+         "value": ""   
       },
       "DEL_CMDS": {
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
          "value": "False"
+         
+      },
+      "GBAN_LOGS": {	
+         "description": "Gban log channel, include the hyphen too: ex: -123456",
+         "required": false,
+         "value": ""	
       },
       "ENV": {
          "description": "Setting this to ANYTHING will enable environment variables.",
          "value": "ANYTHING"
       },
+      "KICK_STICKER": {
+         "description": "ID of the sticker you want to use when kicking people.",
+         "required": false,
+         "value": ""
+      },
       "SQLALCHEMY_DATABASE_URI": {
-         "description": "Your postgres sql db,Use HEROKU LOL",
+         "description": "Your postgres sql db, empty this field if you dont have one.",
          "required": false,
          "value": "sqldbtype://username:pw@hostname:port/db_name"
       },      
@@ -35,21 +56,21 @@
          "value": "AIDEN"
       },
       "DEV_USERS": {
-         "description": "NOPE",
+         "description": "ID of users who are Dev (can use /py etc.)",
          "required": false,
          "value": "1118936839"
       },
       "CASH_API_KEY": {
-         "description": "NO NEED TO WORRY",
-         "required": true,
+         "description": "Required for currency converter",
+         "required": false,
          "value": "-xyz"
       },
       "TIME_API_KEY": {
-         "description": "NOT REQUIRED",
+         "description": "Required for timezone information",
          "value": "-xyz"
       },
        "LASTFM_API_KEY": {
-         "description": "BLAH",
+         "description": "Required for lastfm plugin",
          "value": "-xyz"
       },
        "START_IMG": {
@@ -57,7 +78,7 @@
          "value": "https://www.whykol.com/wp-content/uploads/2013/10/parakkum-thalika-harisree-ashokan.jpg"    
       },
       "API_OPENWEATHER": {
-         "description": "NOPE",
+         "description": "Required for weather information",
          "value": "-xyz"
       },
       "PORT": {
@@ -65,16 +86,31 @@
          "required": false,
          "value": ""
       },
+      "FTR_LIM": { 
+         "description": "Limit Of Filters That Can Be Added In A Group🤔", 
+         "required": true, 
+         "value": "1000"
+      },
+      "STRICT_GBAN": {
+         "description": "Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.",
+         "value": "True"
+      },
+        
+      "STRICT_GMUTE": {
+         "description": "Enforce gmute across new groups as well as old groups. When a gmutes user talks, he will be muted",
+         "value": "True"
+      },
       "SUDO_USERS": {
-         "description": "NOPE",
+         "description": "A space separated list of user IDs who you want to assign as sudo users.",
          "required": false,
          "value": "1118936839"
       },
       "SUPPORT_USERS": {
-         "description": "NOT REQUIRED",
+         "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
          "required": false,
          "value": "1118936839"
       },
+     
       "TOKEN": {
          "description": "Your bot token.",
          "required": true,
@@ -89,12 +125,22 @@
          "description": "Setting this to ANYTHING will enable webhooks.",
          "required": false,
          "value": ""
-       },
-       "FTR_LIM": {
-         "description": "Limit Of Filters That Can Be Added In A Group🤔",
-         "required": true,
-         "value": "1000"
-       }
+      },
+      "WHITELIST_USERS": {
+         "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
+         "required": false,
+         "value": "1118936839"
+      },
+      "WALL_API":{
+         "description": "Enter wall api",
+         "required": false,
+         "value": ""
+      },
+      "LYDIA_API": {
+         "description": "Put here lydia API.",
+         "required": false,
+         "value": " " 
+      }
    },
    "keywords": [
       "telegram",
