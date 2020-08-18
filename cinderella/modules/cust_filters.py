@@ -8,7 +8,7 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-from cinderella import dispatcher, LOGGER
+from cinderella import dispatcher, LOGGER, FILTER_LIM
 from cinderella.modules.disable import DisableAbleCommandHandler
 from cinderella.modules.helper_funcs.chat_status import user_admin
 from cinderella.modules.helper_funcs.extraction import extract_text
@@ -143,8 +143,8 @@ def filters(bot: Bot, update: Update):
             dispatcher.remove_handler(handler, HANDLER_GROUP)
 
     all_handlers = sql.get_chat_triggers(chat.id)
-    if len(all_handlers)>300:
-        msg.reply_text("*You've Reached Maximum Filter Capacity(300)*")
+    if len(all_handlers)>Confing.FTR_LIM:
+        msg.reply_text("You've Reached Maximum Filter Capacity(300)")
         return
     
     sql.add_filter(chat_id, keyword, content, is_sticker, is_document, is_image, is_audio, is_voice, is_video,
