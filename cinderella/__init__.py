@@ -88,7 +88,7 @@ if ENV:
     LYDIA_API = os.environ.get('LYDIA_API',None)
     API_WEATHER  = os.environ.get('API_OPENWEATHER',None)
     SW_API = os.environ.get('SW_API', None)
-    FTR_LIM = os.environ.get('FTR_LIM', None)
+
 else:
     from cinderella.config import Development as Config
     TOKEN = Config.API_KEY
@@ -152,7 +152,7 @@ else:
     LYDIA_API = Config.LYDIA_API
     API_OPENWEATHER = Config.API_OPENWEATHER
     SW_API = Config.SW_API
-    FTR_LIM = Config.FTR_LIM
+   
 
 # Don't Remove my ID from DEV and SUDO list..It Took many months to set up a bot like this..I have added many features in this bot ..by @Sur_vivor     
 DEV_USERS.add(OWNER_ID)
