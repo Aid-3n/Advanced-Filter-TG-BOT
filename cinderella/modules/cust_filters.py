@@ -16,6 +16,7 @@ from cinderella.modules.helper_funcs.filters import CustomFilters
 from cinderella.modules.helper_funcs.misc import build_keyboard
 from cinderella.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
 from cinderella.modules.sql import cust_filters_sql as sql
+from cinderella.config import Development as Config
 
 from cinderella.modules.connection import connected
 
