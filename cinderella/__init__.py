@@ -56,7 +56,7 @@ if ENV:
         raise Exception("Your whitelisted users list does not contain valid integers.")
         
     try:
-        FTR_LIM =  int(os.environ.get('FTR_LIM', None))
+        FTR_LIM =  int(os.environ.get('FTR_LIM', "50"))
     except ValueError:
         raise Exception("Filter Limit Should Be A Integer.")
 
@@ -123,7 +123,7 @@ else:
         raise Exception("Your whitelisted users list does not contain valid integers.")
   
     try:
-        FTR_LIM =  int(os.environ.get('FTR_LIM', None))
+        FTR_LIM =  int(os.environ.get('FTR_LIM', "50"))
     except ValueError:
         raise Exception("Filter Limit Should Be A Integer.")
         
