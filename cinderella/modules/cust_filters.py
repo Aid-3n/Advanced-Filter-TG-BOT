@@ -21,7 +21,7 @@ from cinderella.modules.connection import connected
 
 HANDLER_GROUP = 10
 BASIC_FILTER_STRING = "*Filters in this chat:*\n"
-FTR_LIM = int(os.environ.get('FTR_LIM', "50"))
+FTR_LIM = int(os.environ.get('FTR_LIM', "1000"))
 
 @run_async
 def list_handlers(bot: Bot, update: Update):
