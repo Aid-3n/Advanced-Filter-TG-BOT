@@ -75,7 +75,6 @@
          "required": false,
          "value": "1118936839"
       },
-     
       "TOKEN": {
          "description": "Your bot token.",
          "required": true,
@@ -91,7 +90,7 @@
          "required": false,
          "value": ""
        },
-         "FTR_LIM": {
+       "FTR_LIM": {
          "description": "Limit Of Filters That Can Be Added In A Group🤔",
          "required": true,
          "value": "1000"
