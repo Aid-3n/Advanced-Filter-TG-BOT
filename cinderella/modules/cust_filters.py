@@ -144,7 +144,7 @@ def filters(bot: Bot, update: Update):
 
     all_handlers = sql.get_chat_triggers(chat.id)
     if len(all_handlers) > FTR_LIM:
-        msg.reply_text("_Maximum Number Of Filters Reached In_ *{}*! CONTACT @AID_3N".format(chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
+        msg.reply_text("_Maximum Number Of Filters Reached In_ *{}*!".format(chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
         return
     
     sql.add_filter(chat_id, keyword, content, is_sticker, is_document, is_image, is_audio, is_voice, is_video,
