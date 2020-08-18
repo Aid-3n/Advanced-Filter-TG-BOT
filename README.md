@@ -5,7 +5,7 @@
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 
 ### Click Below Image to Deploy
-[![Deploy](https://coursework.vschool.io/content/images/size/w2000/2018/10/heroku_logo.jpeg)](https://heroku.com/deploy?template=https://github.com/Aid-3n/Advanced-Filter-BOT)
+[![Deploy](https://coursework.vschool.io/content/images/size/w2000/2018/10/heroku_logo.jpeg)](https://heroku.com/deploy?template=https://github.com/Aid-3n/Advanced-Filter-TG-BOT)
 
 # HELPERS
 *[AIDEN](https://telegram.dog/AID_3N)
