@@ -54,6 +54,11 @@ if ENV:
         WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "").split())
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
+        
+    try:
+        FTR_LIM =  Config.FTR_LIM
+    except ValueError:
+        raise Exception("Filter Limit Should Be A Integer.")
 
 
     GBAN_LOGS = os.environ.get('GBAN_LOGS', None)
@@ -83,7 +88,7 @@ if ENV:
     LYDIA_API = os.environ.get('LYDIA_API',None)
     API_WEATHER  = os.environ.get('API_OPENWEATHER',None)
     SW_API = os.environ.get('SW_API', None)
-    FILTER_LIM = os.environ.get('FTR_LIM', None)
+    FTR_LIM = os.environ.get('FTR_LIM', None)
 else:
     from cinderella.config import Development as Config
     TOKEN = Config.API_KEY
@@ -116,6 +121,12 @@ else:
         WHITELIST_USERS = set(int(x) for x in Config.WHITELIST_USERS or [])
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
+  
+    try:
+        FTR_LIM =  Config.FTR_LIM
+    except ValueError:
+        raise Exception("Filter Limit Should Be A Integer.")
+        
 
     GBAN_LOGS = Config.GBAN_LOGS
     WEBHOOK = Config.WEBHOOK
