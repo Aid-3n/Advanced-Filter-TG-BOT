@@ -21,6 +21,7 @@ from cinderella.modules.connection import connected
 
 HANDLER_GROUP = 10
 BASIC_FILTER_STRING = "*Filters in this chat:*\n"
+FTR_LIM = int(os.environ.get('FTR_LIM', "50"))
 
 @run_async
 def list_handlers(bot: Bot, update: Update):
@@ -142,7 +143,7 @@ def filters(bot: Bot, update: Update):
             dispatcher.remove_handler(handler, HANDLER_GROUP)
 
     all_handlers = sql.get_chat_triggers(chat.id)
-    if len(all_handlers) > CONFIG.FTR_LIM:
+    if len(all_handlers) > FTR_LIM:
         msg.reply_text("**You've Reached Maximum Filter Capacity For This Group**")
         return
     
