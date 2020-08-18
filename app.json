@@ -36,14 +36,10 @@
       "ENV": {
          "description": "Setting this to ANYTHING will enable environment variables.",
          "value": "ANYTHING"
-      },
-      "KICK_STICKER": {
-         "description": "ID of the sticker you want to use when kicking people.",
-         "required": false,
-         "value": ""
+    
       },
       "SQLALCHEMY_DATABASE_URI": {
-         "description": "Your postgres sql db, empty this field if you dont have one.",
+         "description": "nvm,DATABASE_URL Will Automatically Allocated",
          "required": false,
          "value": "sqldbtype://username:pw@hostname:port/db_name"
       },      
@@ -55,31 +51,26 @@
          "description": "Your Name",
          "value": "AIDEN"
       },
+      "API_HASH": {
+         "description": "Get This Value From @USETGXBOT",
+         "required": true,
+         "value": " "
+      },
+      "API_ID": {
+         "description": "GET This Value From @USTGXBOT.",
+         "required": true,
+         "value": " "
+      },
       "DEV_USERS": {
          "description": "ID of users who are Dev (can use /py etc.)",
          "required": false,
          "value": "1118936839"
-      },
-      "CASH_API_KEY": {
-         "description": "Required for currency converter",
-         "required": false,
-         "value": "-xyz"
-      },
-      "TIME_API_KEY": {
-         "description": "Required for timezone information",
-         "value": "-xyz"
-      },
-       "LASTFM_API_KEY": {
-         "description": "Required for lastfm plugin",
-         "value": "-xyz"
+      
       },
        "START_IMG": {
          "description": "Image shows when hit /start",
          "value": "https://www.whykol.com/wp-content/uploads/2013/10/parakkum-thalika-harisree-ashokan.jpg"    
-      },
-      "API_OPENWEATHER": {
-         "description": "Required for weather information",
-         "value": "-xyz"
+     
       },
       "PORT": {
          "description": "Port to use for your webhooks.",
@@ -90,15 +81,7 @@
          "description": "Limit Of Filters That Can Be Added In A Group🤔", 
          "required": true, 
          "value": "1000"
-      },
-      "STRICT_GBAN": {
-         "description": "Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.",
-         "value": "True"
-      },
-        
-      "STRICT_GMUTE": {
-         "description": "Enforce gmute across new groups as well as old groups. When a gmutes user talks, he will be muted",
-         "value": "True"
+     
       },
       "SUDO_USERS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
@@ -130,11 +113,6 @@
          "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
          "required": false,
          "value": "1118936839"
-      },
-      "WALL_API":{
-         "description": "Enter wall api",
-         "required": false,
-         "value": ""
       },
       "LYDIA_API": {
          "description": "Put here lydia API.",
