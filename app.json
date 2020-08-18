@@ -95,8 +95,7 @@
          "description": "Limit Of Filters That Can Be Added In A Group🤔",
          "required": true,
          "value": "1000"
-      },
-      }
+       }
    },
    "keywords": [
       "telegram",
