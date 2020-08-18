@@ -8,8 +8,12 @@
 [![Deploy](https://coursework.vschool.io/content/images/size/w2000/2018/10/heroku_logo.jpeg)](https://heroku.com/deploy?template=https://github.com/Aid-3n/Advanced-Filter-BOT)
 
 # HELPERS
----> [AIDEN](tx.me/AID_3N)
----> [SARATH](tx.me/SURV_IVOR)
----> [SANDY](tx.me/MRCONFUSED)
----> [POKURT](tx.me/POKURT)
-Note Do Not Remove These
+*[AIDEN](https://telegram.dog/AID_3N)
+
+*[SARATH](https://telegram.dog/SURV_IVOR)
+
+*[SANDY](https://telegram.dog/MRCONFUSED)
+
+*[POKURT](https://telegram.dog/POKURT)
+
+[Note Do Not Remove These]
