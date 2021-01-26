@@ -131,7 +131,7 @@ def markdown_help(bot: Bot, update: Update):
 @run_async
 @sudo_plus
 def stats(bot: Bot, update: Update):
-    stats = "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b>Current stats:\n</b>" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r'(\d+)', r'<code>\1</code>', stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
     
@@ -366,6 +366,6 @@ dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 dispatcher.add_handler(STATS_HANDLER)
 
-__mod_name__ = "Main Module😜"
+__mod_name__ = "NOT MUCH👀"
 __command_list__ = ["id", "echo"]
 __handlers__ = [ID_HANDLER, ECHO_HANDLER, MD_HELP_HANDLER, STATS_HANDLER]
