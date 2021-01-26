@@ -148,7 +148,7 @@ __help__ = """
 /ignoredlist : List of blacklisted users 
 """
 
-
+__mod_name__ = "BL Users🤣"
 
 
 
