@@ -7,16 +7,11 @@
          "plan": "heroku-postgresql"
       }
    ],
-   "description": "Modular Telegram bot for managing your groups with a few extras features.",
+   "description": "Telegram Filter Bot with a few extras features!",
    "env": {
       "ALLOW_EXCL": {
          "description": "Set this to True if you want ! to be a command prefix along with /",
          "value": "True"
-      },
-      "BAN_STICKER": {
-         "description": "ID of the sticker you want to use when banning people.",
-         "required": false,
-         "value": ""
       },
       "MESSAGE_DUMP": {
          "description": "optional: a chat where your replied saved messages are stored, to stop people deleting their old",
@@ -45,7 +40,7 @@
       },      
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
-         "value": "636052499"
+         "value": "1321091304"
       },
       "OWNER_NAME": {
          "description": "Your Name",
@@ -60,12 +55,6 @@
          "description": "GET This Value From @USTGXBOT.",
          "required": true,
          "value": " "
-      },
-      "DEV_USERS": {
-         "description": "ID of users who are Dev (can use /py etc.)",
-         "required": false,
-         "value": "1118936839"
-      
       },
        "START_IMG": {
          "description": "Image shows when hit /start",
