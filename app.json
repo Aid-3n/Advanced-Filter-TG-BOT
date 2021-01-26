@@ -12,18 +12,9 @@
       "ALLOW_EXCL": {
          "description": "Set this to True if you want ! to be a command prefix along with /",
          "value": "True"
+   
       },
-      "MESSAGE_DUMP": {
-         "description": "optional: a chat where your replied saved messages are stored, to stop people deleting their old",
-         "required": false,
-         "value": ""   
-      },
-      "DEL_CMDS": {
-         "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
-         "value": "False"
-         
-      },
-      "GBAN_LOGS": {	
+      "LOG_CHANNEL": {	
          "description": "Gban log channel, include the hyphen too: ex: -123456",
          "required": false,
          "value": ""	
@@ -52,12 +43,12 @@
          "value": " "
       },
       "API_ID": {
-         "description": "GET This Value From @USTGXBOT.",
+         "description": "GET This Value From @USETGXBOT.",
          "required": true,
          "value": " "
       },
        "START_IMG": {
-         "description": "Image shows when hit /start",
+         "description": "Image shows ON /start",
          "value": "https://www.whykol.com/wp-content/uploads/2013/10/parakkum-thalika-harisree-ashokan.jpg"    
      
       },
@@ -71,17 +62,7 @@
          "required": true, 
          "value": "1000"
      
-      },
-      "SUDO_USERS": {
-         "description": "A space separated list of user IDs who you want to assign as sudo users.",
-         "required": false,
-         "value": "1118936839"
-      },
-      "SUPPORT_USERS": {
-         "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
-         "required": false,
-         "value": "1118936839"
-      },
+     },
      
       "TOKEN": {
          "description": "Your bot token.",
@@ -97,17 +78,8 @@
          "description": "Setting this to ANYTHING will enable webhooks.",
          "required": false,
          "value": ""
-      },
-      "WHITELIST_USERS": {
-         "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
-         "required": false,
-         "value": "1118936839"
-      },
-      "LYDIA_API": {
-         "description": "Put here lydia API.",
-         "required": false,
-         "value": " " 
       }
+
    },
    "keywords": [
       "telegram",
