@@ -16,7 +16,7 @@
       },
       "LOG_CHANNEL": {	
          "description": "Gban log channel, include the hyphen too: ex: -123456",
-         "required": false,
+         "required": true,
          "value": ""	
       },
       "ENV": {
@@ -52,10 +52,10 @@
          "value": "https://www.whykol.com/wp-content/uploads/2013/10/parakkum-thalika-harisree-ashokan.jpg"    
      
       },
-      "PORT": {
-         "description": "Port to use for your webhooks.",
-         "required": false,
-         "value": ""
+      "STRICT_GBAN": {
+         "description": "It's Upto You",
+         "required": true,
+         "value": "True"
       },
       "FTR_LIM": { 
          "description": "Limit Of Filters That Can Be Added In A Group🤔", 
