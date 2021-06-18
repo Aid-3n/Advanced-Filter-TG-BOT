@@ -29,20 +29,17 @@ from cinderella.modules.connection import connect_button
 
 PM_START_TEXT = """
 _Hello_ *{}*
-_My name is_ *{}*\n_A Powerful Telegram FilterBOT to Manage Your Groups,feel free to add to your groups!!_
+_My name is_ *{}*\n_I ONLY WORK IN [MOVIE ARCADE](https://t.me/MOVIE_ARCADE)!!_
 _Maintained by_ [{}](tg://user?id={})
 """
 
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a Filter Bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with.
+NO GONNA HELP YOU
+.
 *Main* commands available:
- 💠 - /start: start the bot
- 💠 - /help: PM's you this message.
- 💠 - /help <module name>: PM's you info about that module.
- 💠 - /source: Information about my source.
+ 💠 - /start: start the bot.
 {}
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
@@ -56,8 +53,7 @@ def vercheck() -> str:
 
 
 SOURCE_STRING = """
-⚡I'm built in python3, using the python-telegram-bot library, and am fully opensource
-⚡You Can Find My Source [Here](https://github.com/Aid-3n/Advanced-Filter-TG-BOT)
+⚡NO SOURCE STRING AVAILABLE.
 """
 
 
